@@ -101,9 +101,11 @@
     border-radius: 50%;
     border: 1.5px solid var(--accent);
     color: var(--accent);
-    font-family: 'Inter', sans-serif;
-    font-size: var(--text-xs);
-    font-weight: 700;
+  }
+  .mark .chip svg {
+    width: 13px;
+    height: 13px;
+    display: block;
   }
   .mark .name {
     font-family: 'Inter', sans-serif;
@@ -756,20 +758,24 @@
   }
   .detail-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: stretch;
   }
   .btn-demo,
   .btn-github {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
-    padding: 9px 16px;
-    border-radius: 9px;
-    font-size: var(--text-sm);
+    flex: 0 1 auto;
+    min-width: 0;
+    min-height: 36px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: var(--text-xs);
     font-weight: 600;
     text-decoration: none;
+    white-space: nowrap;
     transition: background-color .15s ease, border-color .15s ease, filter .15s ease;
   }
   .btn-demo {
@@ -1296,11 +1302,17 @@
       flex-direction: column;
       align-items: stretch;
     }
-    .detail-actions { width: 100%; }
+    .detail-actions {
+      width: 100%;
+      gap: 5px;
+    }
     .btn-demo,
     .btn-github {
-      flex: 1 1 auto;
-      min-height: 44px;
+      flex: 1 1 0;
+      min-width: 0;
+      min-height: 40px;
+      padding: 8px 4px;
+      font-size: 11px;
     }
     .gallery-main { aspect-ratio: auto; }
     .gallery-nav { display: none; }

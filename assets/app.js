@@ -2,9 +2,19 @@
   "use strict";
   var DATA = Array.isArray(window.PROJECT_DATA) ? window.PROJECT_DATA.slice() : [];
 
-  // Pinned projects always come first (stable order within each group)
+  // Pinned first, then newest date first
+  function projectDateValue(d) {
+    if (!d) return 0;
+    var parts = String(d).split('-');
+    var y = parseInt(parts[0], 10) || 0;
+    var m = parseInt(parts[1], 10) || 1;
+    var day = parseInt(parts[2], 10) || 1;
+    return y * 10000 + m * 100 + day;
+  }
   DATA.sort(function (a, b) {
-    return (b.pinned === true ? 1 : 0) - (a.pinned === true ? 1 : 0);
+    var pin = (b.pinned === true ? 1 : 0) - (a.pinned === true ? 1 : 0);
+    if (pin) return pin;
+    return projectDateValue(b.date) - projectDateValue(a.date);
   });
 
   // Precompute search text once (faster filtering)
@@ -334,11 +344,13 @@
 
     return '' +
       '<article class="card' + (p.pinned ? ' is-pinned' : '') + '">' +
-        '<div class="card-media">' +
-          '<a href="' + href + '" tabindex="-1" aria-hidden="true">' +
-            '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async">' +
-          '</a>' +
-        '</div>' +
+        (p.image
+          ? '<div class="card-media">' +
+              '<a href="' + href + '" tabindex="-1" aria-hidden="true">' +
+                '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async">' +
+              '</a>' +
+            '</div>'
+          : '') +
         '<div class="card-body">' +
           '<div class="card-head">' +
             '<h3 class="card-title"><a href="' + href + '">' + titleInner + '</a></h3>' +
@@ -605,7 +617,7 @@
     }
 
     if (thumbs) {
-      if (galleryShots.length > 1) {
+      if (galleryShots.length >= 1) {
         thumbs.hidden = false;
         thumbs.innerHTML = thumbsHTML(galleryShots, 0);
         wireGalleryThumbsDrag(thumbs);
@@ -728,12 +740,20 @@
     if (dateLabel) metaParts.push(esc(dateLabel));
 
     var actions = '';
-    if (p.liveUrl) {
-      actions += '<a class="btn-demo" href="' + esc(p.liveUrl) + '" target="_blank" rel="noopener">Live Demo</a>';
-    }
-    if (p.githubUrl) {
-      actions += '<a class="btn-github" href="' + esc(p.githubUrl) + '" target="_blank" rel="noopener">GitHub</a>';
-    }
+    var demos = (p.demoLinks && p.demoLinks.length)
+      ? p.demoLinks
+      : (p.liveUrl ? [{ label: 'Live Demo', url: p.liveUrl }] : []);
+    demos.forEach(function (l) {
+      if (!l || !l.url) return;
+      actions += '<a class="btn-demo" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label || 'Live Demo') + '</a>';
+    });
+    var repos = (p.githubLinks && p.githubLinks.length)
+      ? p.githubLinks
+      : (p.githubUrl ? [{ label: 'GitHub', url: p.githubUrl }] : []);
+    repos.forEach(function (l) {
+      if (!l || !l.url) return;
+      actions += '<a class="btn-github" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label || 'GitHub') + '</a>';
+    });
 
     var deviceIcons = {
       desktop: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
@@ -754,7 +774,7 @@
         '</div>'
       : '';
 
-    var thumbs = shots.length > 1 ? thumbsHTML(shots, 0) : '';
+    var thumbs = shots.length >= 1 ? thumbsHTML(shots, 0) : '';
 
     var features = (p.features || []).map(function (f) {
       return '<li>' + esc(f) + '</li>';
@@ -792,7 +812,7 @@
                     '</span>' +
                   '</button>' +
                 '</div>' +
-                '<div class="gallery-thumbs"' + (shots.length > 1 ? '' : ' hidden') + '>' + thumbs + '</div>' +
+                '<div class="gallery-thumbs"' + (shots.length >= 1 ? '' : ' hidden') + '>' + thumbs + '</div>' +
               '</div>' +
             '</section>'
           : '') +
