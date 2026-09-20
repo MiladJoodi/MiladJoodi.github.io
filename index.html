@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Milad Joodi — Frontend Developer</title>
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('aj-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#/" class="mark" id="homeLink"><span class="chip">MJ</span><span class="name">Milad Joodi</span></a>
+    <div class="topbar-right">
+      <div class="contact-icons">
+        <a href="https://www.linkedin.com/in/joodi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.75c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.75-2.58 3.55V23h-4V8.5z"/></svg>
+        </a>
+        <a href="https://github.com/MiladJoodi" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.9-.39.98.01 1.97.13 2.9.39 2.21-1.5 3.18-1.18 3.18-1.18.63 1.6.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17v3.22c0 .31.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="mailto:MiladJoodi1@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+        </a>
+        <a href="https://medium.com/@Joodi" target="_blank" rel="noopener" aria-label="Medium">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42-6.82L24 12l-3.04 6.82h-2.55l3.04-6.82-3.04-6.82h2.55zM16.96 5.18L20 12l-3.04 6.82h-2.55L17.45 12l-3.04-6.82h2.55z"/></svg>
+        </a>
+        <a href="https://dev.to/joodi" target="_blank" rel="noopener" aria-label="DEV.to">
+          <svg class="icon-devto" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="0.5" y="3" width="23" height="18" rx="4.5" fill="currentColor"/>
+            <text class="dev-label" x="12" y="15.5" text-anchor="middle" font-size="9" font-weight="700" font-family="system-ui, -apple-system, sans-serif" letter-spacing="0.6">DEV</text>
+          </svg>
+        </a>
+      </div>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" type="button">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="top-spacer" id="topSpacer"></div>
+
+<a id="top"></a>
+<div id="listView">
+<section class="hero" id="hero">
+  <div class="wrap">
+    <h1 class="name">Milad Joodi</h1>
+    <div class="hero-sub">
+      <p class="role-line">Frontend Developer</p>
+      <button type="button" class="hero-toggle" id="heroToggle" aria-expanded="false" aria-controls="stackSheet" aria-label="Show tech stack">
+        Tech stack
+      </button>
+    </div>
+    <div class="stack-sheet" id="stackSheet">
+      <button type="button" class="stack-sheet-backdrop" id="stackBackdrop" aria-label="Close tech stack" tabindex="-1"></button>
+      <div class="stack-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="stackSheetTitle">
+        <div class="stack-sheet-head">
+          <h2 id="stackSheetTitle">Tech stack</h2>
+          <button type="button" class="stack-sheet-close" id="stackClose" aria-label="Close">×</button>
+        </div>
+        <div class="tech-stack" aria-label="Tech stack">
+          <div class="tech-group">
+            <span class="tech-label">Frontend</span>
+            <p class="tech-items">React.js · Next.js · Typescript · Javascript</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">UI &amp; Styling</span>
+            <p class="tech-items">Tailwind CSS · shadcn/ui · Sass · Framer Motion</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">State &amp; Data</span>
+            <p class="tech-items">React Query · Zustand · REST APIs · WebSockets · Socket.io</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">Backend</span>
+            <p class="tech-items">Node.js · Express.js · PostgreSQL · MongoDB · Prisma · Drizzle</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">Auth &amp; Forms</span>
+            <p class="tech-items">Auth.js · OAuth · JWT · React Hook Form · Zod</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">Testing</span>
+            <p class="tech-items">Jest · React Testing Library · Selenium</p>
+          </div>
+          <div class="tech-group">
+            <span class="tech-label">Other</span>
+            <p class="tech-items">PWA · i18next · D3.js · Chart.js</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filterbar" id="filterbar">
+  <div class="filterbar-slide">
+    <div class="wrap">
+      <div class="filterbar-inner">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search 1 builds…" aria-label="Search projects" autocomplete="off">
+          <button type="button" class="search-clear" id="searchClear" aria-label="Clear search">×</button>
+        </div>
+        <button class="cat-toggle" id="catToggle" aria-expanded="false" aria-controls="categoriesPanel" aria-label="Categories">
+          <span class="cat-toggle-label">Categories</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="categories-panel" id="categoriesPanel">
+        <div class="categories-panel-inner">
+          <div class="categories-list" id="categoriesList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid" id="grid"></div>
+</div>
+</div>
+
+<div id="detailView" class="detail-view" hidden></div>
+
+<div id="lightbox" class="lightbox" hidden aria-modal="true" role="dialog" aria-label="Screenshot">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+  <div class="lightbox-stage" id="lightboxStage">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+</div>
+
+<script src="assets/projects.js"></script>
+<script src="assets/app.js"></script>
+
+</body>
+</html>
