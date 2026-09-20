@@ -4,12 +4,12 @@
     --bg-grid: rgba(20, 21, 26, 0.04);
     --paper: #ffffff;
     --paper-inset: #e4e1da;
-    --ink: #14151a;
-    --ink-soft: #4a4b52;
-    --ink-faint: #7a7872;
-    --line: #cfc9bd;
-    --line-soft: color-mix(in srgb, #cfc9bd 70%, transparent);
-    --accent: #8f6b09;
+    --ink: #141414;
+    --ink-soft: #525252;
+    --ink-faint: #8a8a8a;
+    --line: #ddd9d2;
+    --line-soft: color-mix(in srgb, #ddd9d2 75%, transparent);
+    --accent: #141414;
     --shadow: 0 1px 0 rgba(20, 21, 26, 0.04);
     --radius: 12px;
     --header-h: 56px;
@@ -28,11 +28,11 @@
     --paper: #242220;
     --paper-inset: #2e2c29;
     --ink: #f0eeea;
-    --ink-soft: #b8b4ab;
+    --ink-soft: #a3a3a3;
     --ink-faint: #8a8680;
     --line: #3f3c37;
     --line-soft: color-mix(in srgb, #3f3c37 80%, transparent);
-    --accent: #c9a227;
+    --accent: #f0eeea;
     --shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
     color-scheme: dark;
   }
@@ -142,15 +142,24 @@
     cursor: pointer;
     flex-shrink: 0;
     padding: 0;
-    transition: color .15s ease, background-color .15s ease;
+    -webkit-tap-highlight-color: transparent;
+    transition: color .15s ease;
   }
-  .theme-btn:hover {
+  .theme-btn:hover,
+  .theme-btn:active,
+  .theme-btn:focus {
+    background: transparent;
     color: var(--ink);
-    background: var(--line-soft);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .theme-btn:hover { color: var(--ink); }
   }
   .theme-btn:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 2px;
+  }
+  .theme-btn:focus:not(:focus-visible) {
+    outline: none;
   }
   .theme-btn svg {
     width: 20px;
@@ -764,20 +773,14 @@
     transition: background-color .15s ease, border-color .15s ease, filter .15s ease;
   }
   .btn-demo {
-    background: var(--accent);
-    color: #fff;
-    border: 1px solid var(--accent);
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--line);
   }
-  .btn-demo:hover { filter: brightness(1.08); }
-  :root[data-theme="dark"] .btn-demo {
-    background: color-mix(in srgb, var(--accent) 18%, var(--paper));
-    color: var(--accent);
-    border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
-  }
-  :root[data-theme="dark"] .btn-demo:hover {
+  .btn-demo:hover {
     filter: none;
-    background: color-mix(in srgb, var(--accent) 28%, var(--paper));
-    border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+    border-color: var(--ink-soft);
+    background: var(--paper-inset);
   }
   .btn-github {
     background: var(--paper);

@@ -37,6 +37,7 @@
     var next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
     try { localStorage.setItem('aj-theme', next); } catch (e) {}
+    toggle.blur();
   });
 
   /* ---------- hide on scroll down / show header+search on scroll up ---------- */
@@ -664,7 +665,12 @@
     });
   }
 
-  function openLightbox() {
+  function projectHash(id, lightbox) {
+    var base = '#project/' + encodeURIComponent(id);
+    return lightbox ? base + '/lightbox' : base;
+  }
+
+  function openLightboxUI() {
     if (!galleryShots.length) return;
     lightboxOpen = true;
     lightboxImg.src = galleryShots[galleryIndex];
@@ -673,11 +679,38 @@
     document.body.style.overflow = 'hidden';
   }
 
-  function closeLightbox() {
+  function closeLightboxUI() {
+    if (!lightboxOpen && lightbox.hidden) return;
     lightboxOpen = false;
     lightbox.hidden = true;
     document.body.style.overflow = '';
     resetLightboxZoom();
+  }
+
+  /* Opens via hash so Android/iOS back gesture closes lightbox first */
+  function openLightbox() {
+    if (!galleryShots.length) return;
+    var id = detailView.getAttribute('data-project-id');
+    if (!id) {
+      openLightboxUI();
+      return;
+    }
+    var target = projectHash(id, true);
+    if (location.hash !== target) {
+      location.hash = target;
+      return;
+    }
+    openLightboxUI();
+  }
+
+  function closeLightbox() {
+    var id = detailView.getAttribute('data-project-id');
+    var hash = (location.hash || '').replace(/^#/, '');
+    if (id && /\/lightbox\/?$/.test(hash)) {
+      location.hash = projectHash(id, false);
+      return;
+    }
+    closeLightboxUI();
   }
 
   function detailHTML(p) {
@@ -917,8 +950,9 @@
     listView.hidden = false;
     detailView.hidden = true;
     detailView.innerHTML = '';
+    detailView.removeAttribute('data-project-id');
     galleryShots = [];
-    closeLightbox();
+    closeLightboxUI();
     topbar.classList.remove('is-hidden');
     if (filterbar) {
       filterbar.classList.remove('is-hidden');
@@ -931,10 +965,11 @@
     document.body.classList.add('is-detail');
     listView.hidden = true;
     detailView.hidden = false;
+    detailView.setAttribute('data-project-id', projectId(p));
     detailView.innerHTML = detailHTML(p);
     wireDetail();
     topbar.classList.remove('is-hidden');
-    closeLightbox();
+    closeLightboxUI();
     setStackOpen(false);
     window.scrollTo(0, 0);
     document.title = p.title + ' — Milad Joodi';
@@ -942,12 +977,17 @@
 
   function route() {
     var hash = (location.hash || '').replace(/^#/, '');
-    var match = hash.match(/^project\/([^/?#]+)/);
+    var match = hash.match(/^project\/([^/?#]+)(?:\/(lightbox))?\/?$/);
     if (match) {
       var id = decodeURIComponent(match[1]);
+      var wantLb = match[2] === 'lightbox';
       var p = findProject(id);
       if (p) {
-        showDetail(p);
+        var onDetail = document.body.classList.contains('is-detail') &&
+          detailView.getAttribute('data-project-id') === id;
+        if (!onDetail) showDetail(p);
+        if (wantLb) openLightboxUI();
+        else closeLightboxUI();
         return;
       }
     }
