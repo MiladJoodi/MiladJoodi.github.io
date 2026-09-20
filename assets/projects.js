@@ -261,6 +261,60 @@ window.PROJECT_DATA = [
     "pinned": false
   },
   {
+    "id": "vamary",
+    "title": "Vamary",
+    "image": "assets/projects/Vamary/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/Vamary/Desktop/01.png",
+      "assets/projects/Vamary/Desktop/02.png",
+      "assets/projects/Vamary/Desktop/03.png",
+      "assets/projects/Vamary/Desktop/04.png",
+      "assets/projects/Vamary/Desktop/05.png",
+      "assets/projects/Vamary/Desktop/06.png",
+      "assets/projects/Vamary/Desktop/07.png",
+      "assets/projects/Vamary/Desktop/08.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/Vamary/Mobile/01.png",
+      "assets/projects/Vamary/Mobile/02.png"
+    ],
+    "about": "A plastic surgery and aesthetic clinic website built with Next.js 16. It includes service pages, case studies with before/after views, doctor profiles, pricing, FAQ, appointment booking, blog, and contact pages. Based on a ThemeForest template by Vamary; the original template is available on ThemeForest.",
+    "features": [
+      "Responsive clinic website",
+      "Service listing and detail pages",
+      "Case studies with before/after views",
+      "Doctor profiles and team listing",
+      "Pricing, FAQ, and appointment booking",
+      "Blog listing and article pages",
+      "Contact form with map",
+      "Smooth animations and responsive layouts"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Framer Motion",
+      "Swiper",
+      "React Hook Form",
+      "Zod"
+    ],
+    "relatedLinks": [
+      { "label": "ThemeForest template", "url": "https://themeforest.net/item/vamary-plastic-surgery-elementor-template-kit/59038018" }
+    ],
+    "blurb": [
+      "Plastic surgery and aesthetic clinic website with booking and blog.",
+      "Services, case studies, doctor profiles, and before/after views.",
+      "Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4."
+    ],
+    "liveUrl": "https://vamary-demo.netlify.app/",
+    "githubUrl": "https://github.com/MiladJoodi/Vamary",
+    "category": "Web App",
+    "date": "2026-07-18",
+    "pinned": false
+  },
+  {
     "id": "zarinpal",
     "title": "ZarinPal",
     "image": "assets/projects/Zarinpal/Desktop/01.png",
