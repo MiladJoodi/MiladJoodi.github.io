@@ -157,5 +157,175 @@ window.PROJECT_DATA = [
     "category": "Developer Tools",
     "date": "2026-09-15",
     "pinned": true
+  },
+
+  /* ---------- DEMO / FILTER TEST PROJECTS (safe to delete) ---------- */
+  {
+    "id": "demo-pulseboard",
+    "title": "PulseBoard",
+    "image": "assets/projects/MockData/Desktop/02.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/02.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo dashboard for analytics widgets and live KPI cards. Built to test portfolio filtering.",
+    "features": ["KPI cards", "Date range filters", "Export CSV"],
+    "stack": ["Next.js 16", "Typescript", "Recharts", "Tailwind CSS"],
+    "relatedLinks": [],
+    "blurb": [
+      "Analytics dashboard with live KPI cards and chart widgets.",
+      "Date filters, CSV export, and responsive layout."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Dashboards",
+    "date": "2026-08-12",
+    "pinned": false
+  },
+  {
+    "id": "demo-shopkit",
+    "title": "ShopKit",
+    "image": "assets/projects/MockData/Desktop/03.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/03.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo storefront with product grid, cart drawer, and checkout skeleton.",
+    "features": ["Product grid", "Cart drawer", "Stripe-ready checkout UI"],
+    "stack": ["React", "Typescript", "Tailwind CSS", "Zustand"],
+    "relatedLinks": [],
+    "blurb": [
+      "Lightweight storefront UI with cart drawer and product filters.",
+      "Zustand state and Tailwind styling for rapid iteration."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "E-commerce",
+    "date": "2026-07-20",
+    "pinned": false
+  },
+  {
+    "id": "demo-formforge",
+    "title": "FormForge",
+    "image": "assets/projects/Endpoints/01.png",
+    "screenshotsDesktop": ["assets/projects/Endpoints/01.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo form builder with schema validation and multi-step flows.",
+    "features": ["Multi-step forms", "Zod schemas", "Accessible inputs"],
+    "stack": ["Next.js 16", "Typescript", "React Hook Form", "Zod", "shadcn/ui"],
+    "relatedLinks": [],
+    "blurb": [
+      "Schema-driven multi-step forms with React Hook Form and Zod.",
+      "Accessible inputs styled with shadcn/ui."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Developer Tools",
+    "date": "2026-06-03",
+    "pinned": false
+  },
+  {
+    "id": "demo-notiz",
+    "title": "Notiz",
+    "image": "assets/projects/MockData/Desktop/05.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/05.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo notes app with markdown preview and local persistence.",
+    "features": ["Markdown editor", "Folders", "Local-first sync"],
+    "stack": ["React", "Javascript", "IndexedDB", "Tailwind CSS"],
+    "relatedLinks": [],
+    "blurb": [
+      "Local-first notes app with markdown preview and folders.",
+      "Persists drafts in IndexedDB without a backend."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Productivity",
+    "date": "2026-05-18",
+    "pinned": false
+  },
+  {
+    "id": "demo-orbitcms",
+    "title": "Orbit CMS",
+    "image": "assets/projects/MockData/Desktop/06.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/06.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo headless CMS admin with content collections and media library.",
+    "features": ["Collections", "Media library", "Role-based UI"],
+    "stack": ["Next.js 16", "Typescript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    "relatedLinks": [],
+    "blurb": [
+      "Headless CMS admin for collections and media management.",
+      "Prisma + PostgreSQL with a clean Tailwind UI."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "CMS",
+    "date": "2026-04-09",
+    "pinned": false
+  },
+  {
+    "id": "demo-streamline",
+    "title": "Streamline Chat",
+    "image": "assets/projects/Endpoints/02.png",
+    "screenshotsDesktop": ["assets/projects/Endpoints/02.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo realtime chat UI with rooms, presence, and optimistic messages.",
+    "features": ["Rooms", "Presence indicators", "Optimistic sends"],
+    "stack": ["React", "Typescript", "Socket.io", "Zustand", "Tailwind CSS"],
+    "relatedLinks": [],
+    "blurb": [
+      "Realtime chat UI with rooms and presence indicators.",
+      "Socket.io client with Zustand for optimistic updates."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Messaging",
+    "date": "2026-03-22",
+    "pinned": false
+  },
+  {
+    "id": "demo-atlasmaps",
+    "title": "Atlas Maps",
+    "image": "assets/projects/MockData/Desktop/08.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/08.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo map explorer with markers, clusters, and search.",
+    "features": ["Marker clusters", "Place search", "Dark map theme"],
+    "stack": ["Next.js 16", "Typescript", "Mapbox", "Tailwind CSS"],
+    "relatedLinks": [],
+    "blurb": [
+      "Interactive map explorer with clusters and place search.",
+      "Mapbox GL powered views with a dark theme."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Maps",
+    "date": "2026-02-14",
+    "pinned": false
+  },
+  {
+    "id": "demo-ledgerlite",
+    "title": "LedgerLite",
+    "image": "assets/projects/MockData/Desktop/09.png",
+    "screenshotsDesktop": ["assets/projects/MockData/Desktop/09.png"],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Demo expense tracker with categories, charts, and CSV import.",
+    "features": ["Categories", "Monthly charts", "CSV import"],
+    "stack": ["React", "Typescript", "Recharts", "Zod", "Vite"],
+    "relatedLinks": [],
+    "blurb": [
+      "Simple expense tracker with categories and monthly charts.",
+      "CSV import and Zod validation on the client."
+    ],
+    "liveUrl": "",
+    "githubUrl": "",
+    "category": "Finance",
+    "date": "2026-01-28",
+    "pinned": false
   }
 ];

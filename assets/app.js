@@ -240,6 +240,21 @@
     render();
   }
 
+  function filterByTech(tech) {
+    if (!tech) return;
+    if (searchTimer) clearTimeout(searchTimer);
+    searchInput.value = tech;
+    searchTerm = tech.trim().toLowerCase();
+    syncSearchUI();
+    render();
+    if (filterbar) {
+      try {
+        filterbar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (e) {}
+    }
+    try { searchInput.focus({ preventScroll: true }); } catch (e) { searchInput.focus(); }
+  }
+
   searchInput.addEventListener('input', function () {
     syncSearchUI();
     if (searchTimer) clearTimeout(searchTimer);
@@ -316,7 +331,7 @@
 
     var stackLine = (p.stack || []).length
       ? '<div class="card-stack">' + (p.stack || []).map(function (t) {
-          return '<span class="card-tech">' + esc(t) + '</span>';
+          return '<button type="button" class="card-tech" data-tech="' + esc(t) + '" title="Filter by ' + esc(t) + '">' + esc(t) + '</button>';
         }).join('') + '</div>'
       : '';
 
@@ -380,6 +395,14 @@
       }
     });
   }
+
+  gridEl.addEventListener('click', function (e) {
+    var techBtn = e.target.closest('.card-tech');
+    if (!techBtn || !gridEl.contains(techBtn)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    filterByTech(techBtn.getAttribute('data-tech') || techBtn.textContent || '');
+  });
 
   function wireCardLinks() {
     gridEl.querySelectorAll('.card-links').forEach(function (details) {
