@@ -255,7 +255,7 @@ window.PROJECT_DATA = [
       "Built with Next.js, TypeScript, Tailwind CSS, and the GitHub API."
     ],
     "liveUrl": "https://git-gpt.netlify.app/",
-    "githubUrl": "https://github.com/MiladJoodi/Git-GPT",
+    "githubUrl": "",
     "category": "Developer Tools",
     "date": "2026-09-13",
     "pinned": false
