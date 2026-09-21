@@ -142,6 +142,26 @@
     return 180;
   }
 
+  function withChromeInstant(fn) {
+    topbar.classList.add('is-instant');
+    if (filterbar) filterbar.classList.add('is-instant');
+    fn();
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        topbar.classList.remove('is-instant');
+        if (filterbar) filterbar.classList.remove('is-instant');
+      });
+    });
+  }
+
+  function showChromeBars() {
+    topbar.classList.remove('is-hidden');
+    if (filterbar) {
+      filterbar.classList.remove('is-hidden');
+      filterbar.classList.remove('is-search-only');
+    }
+  }
+
   function onScroll() {
     if (document.body.classList.contains('is-detail')) return;
     var y = window.scrollY || window.pageYOffset;
@@ -149,18 +169,27 @@
     var goingDown = dy > 4;
     var goingUp = dy < -4;
     var pastHero = y > hideAfterY();
+    // Layout shifts (filter/route) cause huge scroll jumps; snap chrome without slide animation
+    var jump = Math.abs(dy) > 80;
 
-    filterbar.classList.remove('is-search-only');
+    if (jump) {
+      withChromeInstant(function () {
+        showChromeBars();
+      });
+      lastScroll = y <= 0 ? 0 : y;
+      ticking = false;
+      return;
+    }
+
+    if (filterbar) filterbar.classList.remove('is-search-only');
 
     if (y < 32) {
-      topbar.classList.remove('is-hidden');
-      filterbar.classList.remove('is-hidden');
+      showChromeBars();
     } else if (goingDown && pastHero) {
       topbar.classList.add('is-hidden');
-      filterbar.classList.add('is-hidden');
+      if (filterbar) filterbar.classList.add('is-hidden');
     } else if (goingUp) {
-      topbar.classList.remove('is-hidden');
-      filterbar.classList.remove('is-hidden');
+      showChromeBars();
     }
 
     lastScroll = y <= 0 ? 0 : y;
@@ -191,6 +220,12 @@
   }
 
   /* ---------- categories ---------- */
+  var categoryOrder = [
+    'Developer Tools',
+    'Web App',
+    'Chrome Extension',
+    'Package'
+  ];
   var categories = [];
   var catSet = {};
   DATA.forEach(function (p) {
@@ -199,11 +234,18 @@
       categories.push(p.category);
     }
   });
-  categories.sort();
+  categories.sort(function (a, b) {
+    var ia = categoryOrder.indexOf(a);
+    var ib = categoryOrder.indexOf(b);
+    if (ia === -1) ia = categoryOrder.length;
+    if (ib === -1) ib = categoryOrder.length;
+    if (ia !== ib) return ia - ib;
+    return a < b ? -1 : a > b ? 1 : 0;
+  });
 
   var activeCategory = '';
-  var catToggle = document.getElementById('catToggle');
-  var catPanel = document.getElementById('categoriesPanel');
+  var searchToggle = document.getElementById('searchToggle');
+  var searchPanel = document.getElementById('searchPanel');
   var catList = document.getElementById('categoriesList');
 
   function buildCategoryChips() {
@@ -225,11 +267,6 @@
     render();
   });
 
-  catToggle.addEventListener('click', function () {
-    var open = catPanel.classList.toggle('is-open');
-    catToggle.setAttribute('aria-expanded', String(open));
-  });
-
   function updateSpacer() {
     topSpacer.style.height = topbar.offsetHeight + 'px';
   }
@@ -240,6 +277,16 @@
   var searchTerm = '';
   var searchTimer = null;
   var SEARCH_DEBOUNCE_MS = 500;
+
+  if (searchToggle && searchPanel) {
+    searchToggle.addEventListener('click', function () {
+      var open = searchPanel.classList.toggle('is-open');
+      searchToggle.setAttribute('aria-expanded', String(open));
+      if (open && searchInput) {
+        window.setTimeout(function () { searchInput.focus(); }, 280);
+      }
+    });
+  }
 
   function syncSearchUI() {
     var hasText = searchInput.value.length > 0;
@@ -1150,12 +1197,11 @@
     galleryVideo = '';
     galleryPoster = '';
     closeLightboxUI();
-    topbar.classList.remove('is-hidden');
-    if (filterbar) {
-      filterbar.classList.remove('is-hidden');
-      filterbar.classList.remove('is-search-only');
-    }
-    document.title = 'Milad Joodi — Frontend Developer';
+    withChromeInstant(function () {
+      showChromeBars();
+    });
+    lastScroll = window.scrollY || window.pageYOffset || 0;
+    document.title = 'My Portfolio';
   }
 
   function showDetail(p) {
@@ -1165,11 +1211,14 @@
     detailView.setAttribute('data-project-id', projectId(p));
     detailView.innerHTML = detailHTML(p);
     wireDetail();
-    topbar.classList.remove('is-hidden');
+    withChromeInstant(function () {
+      topbar.classList.remove('is-hidden');
+    });
     closeLightboxUI();
     setStackOpen(false);
     window.scrollTo(0, 0);
-    document.title = p.title + ' — Milad Joodi';
+    lastScroll = 0;
+    document.title = p.title + ' — My Portfolio';
   }
 
   function route() {
@@ -1203,6 +1252,15 @@
       : '<div class="empty-state">No builds match that search. Try a different term or category.</div>';
     wireImages();
     wireCardLinks();
+    window.requestAnimationFrame(function () {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (Math.abs(y - lastScroll) > 40) {
+        withChromeInstant(function () {
+          showChromeBars();
+        });
+      }
+      lastScroll = y;
+    });
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
