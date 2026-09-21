@@ -315,6 +315,111 @@ window.PROJECT_DATA = [
     "pinned": false
   },
   {
+    "id": "jobflow",
+    "title": "JobFlow",
+    "image": "assets/projects/JobFlow/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/JobFlow/Desktop/01.png",
+      "assets/projects/JobFlow/Desktop/02.png",
+      "assets/projects/JobFlow/Desktop/03.png",
+      "assets/projects/JobFlow/Desktop/04.png",
+      "assets/projects/JobFlow/Desktop/05.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/JobFlow/Mobile/01.png"
+    ],
+    "about": "A job search and hiring platform built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4. It includes job search and filtering, company profiles, application tracking, and separate user and employer dashboards.",
+    "features": [
+      "Job search with keyword, location, and advanced filters",
+      "Job details with responsibilities, requirements, and benefits",
+      "Application form with resume upload and validation",
+      "Save and bookmark jobs with localStorage persistence",
+      "Application status tracking",
+      "Company profiles with culture info and open positions",
+      "Employer dashboard with job posting and pricing plans",
+      "Career advice, resume tips, and interview preparation",
+      "Responsive layouts with skeleton loading states"
+    ],
+    "stack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Zustand",
+      "React Hook Form",
+      "Zod",
+      "Framer Motion",
+      "Lucide React"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Job search and hiring platform with filters and application tracking.",
+      "Company profiles, employer tools, and career resources included.",
+      "Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4."
+    ],
+    "liveUrl": "https://jobflow-demo.netlify.app/",
+    "githubUrl": "https://github.com/MiladJoodi/JobFlow",
+    "category": "Web App",
+    "date": "2026-03-22",
+    "pinned": false
+  },
+  {
+    "id": "quizmaster",
+    "title": "QuizMaster",
+    "image": "assets/projects/QuizMaster/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/QuizMaster/Desktop/01.png",
+      "assets/projects/QuizMaster/Desktop/02.png",
+      "assets/projects/QuizMaster/Desktop/03.png",
+      "assets/projects/QuizMaster/Desktop/04.png",
+      "assets/projects/QuizMaster/Desktop/05.png",
+      "assets/projects/QuizMaster/Desktop/06.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/QuizMaster/Mobile/01.png",
+      "assets/projects/QuizMaster/Mobile/02.png"
+    ],
+    "about": "A modern quiz platform for creating, taking, and tracking quizzes. It offers intuitive admin management, real-time results, and performance analytics, built with React, Next.js, and Tailwind CSS. Includes countdown timers, achievements, leaderboards, and dashboards with charts.",
+    "features": [
+      "Quiz engine with countdown timer, pause/resume, and auto-submit",
+      "Question flagging, multi-select and single-choice types",
+      "Anti-cheat tab-switch detection with warnings",
+      "Animated results with confetti, per-question review, and grade system",
+      "Dashboard with KPI cards and performance charts",
+      "Leaderboard, achievements, points, and streak tracking",
+      "Browse, create, and filter quizzes by category and difficulty",
+      "Question bank, profile, settings, and notifications",
+      "Dark/light theme support"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Zustand",
+      "Framer Motion",
+      "Recharts",
+      "React Hook Form",
+      "Zod",
+      "shadcn/ui",
+      "next-themes",
+      "Lucide React"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Quiz platform for creating, taking, and tracking quizzes.",
+      "Timers, analytics, achievements, and leaderboards included.",
+      "Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4."
+    ],
+    "liveUrl": "https://1quizmaster.netlify.app/",
+    "githubUrl": "https://github.com/MiladJoodi/QuizMaster",
+    "category": "Web App",
+    "date": "2026-09-21",
+    "pinned": false
+  },
+  {
     "id": "zarinpal",
     "title": "ZarinPal",
     "image": "assets/projects/Zarinpal/Desktop/01.png",
