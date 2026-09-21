@@ -176,7 +176,7 @@
   :root[data-theme="dark"] .theme-btn .icon-sun { display: block; }
   :root[data-theme="dark"] .theme-btn .icon-moon { display: none; }
 
-  /* space for fixed header only — search lives in document flow after hero */
+  /* space for fixed header only */
   .top-spacer {
     height: calc(var(--header-h) + var(--safe-top));
   }
@@ -345,122 +345,6 @@
     background: var(--paper-inset);
     border-color: var(--ink);
     color: var(--ink);
-  }
-
-  .search-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    gap: 6px;
-    min-height: 34px;
-    height: 34px;
-    padding: 0 12px;
-    background: var(--paper);
-    border: 1.5px solid var(--line);
-    border-radius: 999px;
-    color: var(--ink-soft);
-    font-family: inherit;
-    font-size: var(--text-xs);
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: border-color .15s ease, background .15s ease, color .15s ease, transform .28s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .search-toggle:hover {
-    border-color: var(--ink-soft);
-    color: var(--ink);
-  }
-  .search-toggle[aria-expanded="true"] {
-    border-color: var(--ink-soft);
-    color: var(--ink);
-    background: var(--paper-inset);
-  }
-  .search-toggle svg {
-    width: 14px;
-    height: 14px;
-    transition: transform .28s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .search-toggle[aria-expanded="true"] svg {
-    transform: rotate(180deg);
-  }
-
-  .search-panel {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .search-panel.is-open {
-    grid-template-rows: 1fr;
-  }
-  .search-panel-inner {
-    overflow: hidden;
-    min-height: 0;
-  }
-  .search-panel .search-box {
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .search-panel.is-open .search-box {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .search-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-sizing: border-box;
-    min-height: 34px;
-    border: 1.5px solid var(--line);
-    border-radius: 999px;
-    padding: 0 14px;
-    background: var(--paper);
-    width: 100%;
-    min-width: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .search-box:focus-within {
-    border-color: var(--ink-soft);
-    box-shadow: 0 0 0 3px var(--line-soft);
-  }
-  .search-box svg.search-icon { width: 17px; height: 17px; color: var(--ink-faint); flex-shrink: 0; }
-  .search-box input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: var(--ink);
-    font-family: inherit;
-    font-size: var(--text-sm);
-    width: 100%;
-    min-width: 0;
-  }
-  .search-box input::placeholder { color: var(--ink-faint); }
-  .search-clear {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: var(--ink-faint);
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-    border-radius: 50%;
-  }
-  .search-clear.is-visible { display: flex; }
-  .search-clear:hover { color: var(--ink); }
-
-  .result-count {
-    display: none;
   }
 
   /* ---------- grid ---------- */
@@ -1412,8 +1296,6 @@
     .card-date { font-size: var(--text-xs); }
     .card-detail p:not(:first-child) { display: none; }
     .card-tech { padding: 4px 9px; }
-    .search-box { padding: 10px 12px; }
-    .search-box input { font-size: 16px; } /* avoid iOS zoom on focus */
     .detail-title { font-size: 1.5rem; }
     .detail-section p,
     .detail-features,
@@ -1421,14 +1303,7 @@
     .detail-related { font-size: var(--text-base); }
     .btn-demo,
     .btn-github { font-size: var(--text-sm); }
-    .search-toggle {
-      width: 34px;
-      padding: 0;
-      gap: 0;
-    }
-    .search-toggle-label { display: none; }
     .cat-chip { font-size: var(--text-xs); padding: 0 11px; }
-    .search-box { padding: 0 12px; }
     .contact-icons a { width: 30px; height: 30px; }
     .filterbar-slide { padding: 10px 0; }
     .detail-header {
