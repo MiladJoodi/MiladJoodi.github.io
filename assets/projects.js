@@ -416,7 +416,7 @@ window.PROJECT_DATA = [
     "liveUrl": "https://1quizmaster.netlify.app/",
     "githubUrl": "https://github.com/MiladJoodi/QuizMaster",
     "category": "Web App",
-    "date": "2026-09-21",
+    "date": "2026-03-06",
     "pinned": false
   },
   {
