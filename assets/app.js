@@ -17,16 +17,6 @@
     return projectDateValue(b.date) - projectDateValue(a.date);
   });
 
-  // Precompute search text once (faster filtering)
-  DATA.forEach(function (p) {
-    p._search = [p.title, p.category, p.about]
-      .concat(p.blurb || [])
-      .concat(p.features || [])
-      .concat(p.stack || [])
-      .join(' ')
-      .toLowerCase();
-  });
-
   /* ---------- theme ---------- */
   var root = document.documentElement;
   var toggle = document.getElementById('themeToggle');
@@ -50,7 +40,7 @@
     toggle.blur();
   });
 
-  /* ---------- hide on scroll down / show header+search on scroll up ---------- */
+  /* ---------- hide on scroll down / show header on scroll up ---------- */
   var topbar = document.getElementById('topbar');
   var filterbar = document.getElementById('filterbar');
   var topSpacer = document.getElementById('topSpacer');
@@ -137,7 +127,7 @@
   window.addEventListener('resize', syncStackSheetMode);
 
   function hideAfterY() {
-    // Don't float/hide until the hero has scrolled past (search stays with content, not over hero)
+    // Don't float/hide until the hero has scrolled past
     if (heroEl) return heroEl.offsetTop + heroEl.offsetHeight;
     return 180;
   }
@@ -158,7 +148,6 @@
     topbar.classList.remove('is-hidden');
     if (filterbar) {
       filterbar.classList.remove('is-hidden');
-      filterbar.classList.remove('is-search-only');
     }
   }
 
@@ -180,8 +169,6 @@
       ticking = false;
       return;
     }
-
-    if (filterbar) filterbar.classList.remove('is-search-only');
 
     if (y < 32) {
       showChromeBars();
@@ -244,8 +231,6 @@
   });
 
   var activeCategory = '';
-  var searchToggle = document.getElementById('searchToggle');
-  var searchPanel = document.getElementById('searchPanel');
   var catList = document.getElementById('categoriesList');
 
   function buildCategoryChips() {
@@ -271,57 +256,9 @@
     topSpacer.style.height = topbar.offsetHeight + 'px';
   }
 
-  /* ---------- search ---------- */
-  var searchInput = document.getElementById('searchInput');
-  var searchClear = document.getElementById('searchClear');
-  var searchTerm = '';
-  var searchTimer = null;
-  var SEARCH_DEBOUNCE_MS = 500;
-
-  if (searchToggle && searchPanel) {
-    searchToggle.addEventListener('click', function () {
-      var open = searchPanel.classList.toggle('is-open');
-      searchToggle.setAttribute('aria-expanded', String(open));
-      if (open && searchInput) {
-        window.setTimeout(function () { searchInput.focus(); }, 280);
-      }
-    });
-  }
-
-  function syncSearchUI() {
-    var hasText = searchInput.value.length > 0;
-    searchClear.classList.toggle('is-visible', hasText);
-  }
-
-  function applySearch() {
-    searchTerm = searchInput.value.trim().toLowerCase();
-    render();
-  }
-
-  searchInput.addEventListener('input', function () {
-    syncSearchUI();
-    if (searchTimer) clearTimeout(searchTimer);
-    searchTimer = setTimeout(applySearch, SEARCH_DEBOUNCE_MS);
-  });
-
-  searchClear.addEventListener('click', function () {
-    if (searchTimer) clearTimeout(searchTimer);
-    searchInput.value = '';
-    searchTerm = '';
-    syncSearchUI();
-    render();
-    searchInput.focus();
-  });
-
-  // Desktop: focus search on load
-  if (!isMobile()) {
-    try { searchInput.focus({ preventScroll: true }); } catch (e) { searchInput.focus(); }
-  }
-
   function matches(p) {
     if (activeCategory && p.category !== activeCategory) return false;
-    if (!searchTerm) return true;
-    return (p._search || '').indexOf(searchTerm) > -1;
+    return true;
   }
 
   /* ---------- card rendering ---------- */
@@ -1242,14 +1179,9 @@
 
   function render() {
     var filtered = DATA.filter(matches);
-    var n = filtered.length;
-    var total = DATA.length;
-    searchInput.placeholder = n === total
-      ? 'Search ' + total + ' builds…'
-      : 'Search ' + n + ' of ' + total + ' builds…';
     gridEl.innerHTML = filtered.length
       ? filtered.map(cardHTML).join('')
-      : '<div class="empty-state">No builds match that search. Try a different term or category.</div>';
+      : '<div class="empty-state">No builds in this category.</div>';
     wireImages();
     wireCardLinks();
     window.requestAnimationFrame(function () {
