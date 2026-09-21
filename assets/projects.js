@@ -381,16 +381,16 @@ window.PROJECT_DATA = [
       "assets/projects/QuizMaster/Mobile/01.png",
       "assets/projects/QuizMaster/Mobile/02.png"
     ],
-    "about": "A modern quiz platform for creating, taking, and tracking quizzes. It offers intuitive admin management, real-time results, and performance analytics, built with React, Next.js, and Tailwind CSS. Includes countdown timers, achievements, leaderboards, and dashboards with charts.",
+    "about": "A quiz and learning platform for creating, taking, and tracking quizzes. It includes a timed quiz engine, question review, performance analytics, achievements, points, streaks, and a leaderboard. Built with Next.js, React, TypeScript, and Zustand.",
     "features": [
-      "Quiz engine with countdown timer, pause/resume, and auto-submit",
-      "Question flagging, multi-select and single-choice types",
-      "Anti-cheat tab-switch detection with warnings",
-      "Animated results with confetti, per-question review, and grade system",
-      "Dashboard with KPI cards and performance charts",
-      "Leaderboard, achievements, points, and streak tracking",
-      "Browse, create, and filter quizzes by category and difficulty",
-      "Question bank, profile, settings, and notifications",
+      "Timed quiz engine with pause/resume and auto-submit",
+      "Single-choice and multi-select questions with flagging",
+      "Tab-switch detection with warnings",
+      "Detailed results with per-question review and explanations",
+      "Performance tracking with charts and attempt history",
+      "Quiz browsing, filtering, and creation",
+      "Leaderboard, achievements, points, and streaks",
+      "Question bank, categories, profile, settings, and notifications",
       "Dark/light theme support"
     ],
     "stack": [
@@ -409,9 +409,9 @@ window.PROJECT_DATA = [
     ],
     "relatedLinks": [],
     "blurb": [
-      "Quiz platform for creating, taking, and tracking quizzes.",
-      "Timers, analytics, achievements, and leaderboards included.",
-      "Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4."
+      "Quiz and learning platform with timers, analytics, and achievements.",
+      "Leaderboards, streaks, question bank, and dark/light theme.",
+      "Built with Next.js 16, React 19, TypeScript, and Zustand."
     ],
     "liveUrl": "https://1quizmaster.netlify.app/",
     "githubUrl": "https://github.com/MiladJoodi/QuizMaster",
