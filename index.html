@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Milad Joodi — Frontend Developer</title>
+<title>My Portfolio</title>
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <script>
   (function () {
@@ -27,7 +27,7 @@
 
 <div class="topbar" id="topbar">
   <div class="wrap topbar-inner">
-    <a href="#/" class="mark" id="homeLink"><span class="chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span><span class="name">Milad Joodi</span></a>
+    <a href="#/" class="mark" id="homeLink"><span class="chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></span><span class="name">My Portfolio</span></a>
     <div class="topbar-right">
       <div class="contact-icons">
         <a href="https://www.linkedin.com/in/joodi/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -80,7 +80,7 @@
         <div class="tech-stack" aria-label="Tech stack">
           <div class="tech-group">
             <span class="tech-label">Frontend</span>
-            <p class="tech-items">React.js · Next.js · TypeScript · Javascript</p>
+            <p class="tech-items">React.js · Next.js · TypeScript · JavaScript</p>
           </div>
           <div class="tech-group">
             <span class="tech-label">UI &amp; Styling</span>
@@ -106,6 +106,14 @@
             <span class="tech-label">Other</span>
             <p class="tech-items">PWA · i18next · D3.js · Chart.js</p>
           </div>
+          <div class="tech-group">
+            <span class="tech-label">Writing</span>
+            <p class="tech-items">
+              <a href="https://www.linkedin.com/newsletters/frontend-family-%F0%9F%A7%A9-7288134016199778306/" target="_blank" rel="noopener">FrontEnd Family</a>
+              ·
+              <a href="https://www.linkedin.com/newsletters/ai-finds-%F0%9F%93%A2-7484960831105908737/" target="_blank" rel="noopener">AI Finds</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -116,19 +124,20 @@
   <div class="filterbar-slide">
     <div class="wrap">
       <div class="filterbar-inner">
-        <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-          <input type="text" id="searchInput" placeholder="Search 1 builds…" aria-label="Search projects" autocomplete="off">
-          <button type="button" class="search-clear" id="searchClear" aria-label="Clear search">×</button>
-        </div>
-        <button class="cat-toggle" id="catToggle" aria-expanded="false" aria-controls="categoriesPanel" aria-label="Categories">
-          <span class="cat-toggle-label">Categories</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-      </div>
-      <div class="categories-panel" id="categoriesPanel">
-        <div class="categories-panel-inner">
+        <div class="categories-row">
           <div class="categories-list" id="categoriesList"></div>
+          <button class="search-toggle" id="searchToggle" type="button" aria-expanded="false" aria-controls="searchPanel" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="search-panel" id="searchPanel">
+        <div class="search-panel-inner">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" id="searchInput" placeholder="Search builds…" aria-label="Search projects" autocomplete="off">
+            <button type="button" class="search-clear" id="searchClear" aria-label="Clear search">×</button>
+          </div>
         </div>
       </div>
     </div>
