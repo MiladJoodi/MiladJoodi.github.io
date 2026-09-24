@@ -55,6 +55,64 @@
  */
 window.PROJECT_DATA = [
   {
+    "id": "meetcast",
+    "title": "MeetCast",
+    "image": "assets/projects/MeetCast/Desktop/01.png",
+    "video": "assets/projects/MeetCast/Desktop/01.mp4",
+    "screenshotsDesktop": [
+      "assets/projects/MeetCast/Desktop/01.png",
+      "assets/projects/MeetCast/Desktop/02.png",
+      "assets/projects/MeetCast/Desktop/03.png",
+      "assets/projects/MeetCast/Desktop/04.png",
+      "assets/projects/MeetCast/Desktop/06.png",
+      "assets/projects/MeetCast/Desktop/07.png",
+      "assets/projects/MeetCast/Desktop/08.png",
+      "assets/projects/MeetCast/Desktop/09.png",
+      "assets/projects/MeetCast/Desktop/10.png",
+      "assets/projects/MeetCast/Desktop/11.png",
+      "assets/projects/MeetCast/Desktop/12.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/MeetCast/Mobile/01.png"
+    ],
+    "about": "A real-time video meeting platform built with Next.js, LiveKit, PostgreSQL, and TypeScript. Schedule a room, share an invite, and join with camera, mic, screen share, chat, and basic moderation. Plans control participant counts and meeting duration. Private rooms restrict join to allowlisted account emails.",
+    "features": [
+      "Create and edit rooms with start/end schedule and invite links",
+      "Public or private rooms with email allowlist for private access",
+      "HD video, audio, screen share, participant grid, and speaking state",
+      "In-room chat, raise hand, and reactions via LiveKit data channel",
+      "Host and moderator tools: mute, disable camera, remove, promote/demote",
+      "Guest join on public rooms; plan-driven capacity and duration limits",
+      "Auth with sessions, password flows, and optional email verification",
+      "Billing checkout with Free/Starter/Pro/Business plans",
+      "Admin panel for users, rooms, plans, orders, and audit logs"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "LiveKit",
+      "Drizzle ORM",
+      "Neon Postgres",
+      "Zod",
+      "Vitest",
+      "pnpm"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Real-time video meetings with LiveKit: camera, mic, screen share, and chat.",
+      "Scheduled rooms, invite links, private allowlists, and plan-based limits.",
+      "Host moderation, auth, billing, and an admin panel on Next.js 16."
+    ],
+    "liveUrl": "https://meetcast-demo.netlify.app/",
+    "githubUrl": "https://github.com/MiladJoodi/MeetCast",
+    "category": "Web App",
+    "date": "2026-09-25",
+    "pinned": true
+  },
+  {
     "id": "skeletonix",
     "title": "Skeletonix",
     "image": "assets/projects/Skeletonix/01.gif",
@@ -255,7 +313,7 @@ window.PROJECT_DATA = [
       "Built with Next.js, TypeScript, Tailwind CSS, and the GitHub API."
     ],
     "liveUrl": "https://git-gpt.netlify.app/",
-    "githubUrl": "https://github.com/MiladJoodi/Git-GPT",
+    "githubUrl": "",
     "category": "Developer Tools",
     "date": "2026-09-13",
     "pinned": false
@@ -1256,7 +1314,7 @@ window.PROJECT_DATA = [
     "liveUrl": "https://mockdata.ir",
     "githubUrl": "",
     "category": "Developer Tools",
-    "date": "2026-09-08",
+    "date": "2026-09-24",
     "pinned": false
   },
   {
@@ -1297,6 +1355,6 @@ window.PROJECT_DATA = [
     "githubUrl": "",
     "category": "Developer Tools",
     "date": "2026-09-15",
-    "pinned": true
+    "pinned": false
   }
 ];
