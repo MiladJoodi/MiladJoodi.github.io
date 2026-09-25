@@ -113,6 +113,49 @@ window.PROJECT_DATA = [
     "pinned": true
   },
   {
+    "id": "captchakit",
+    "title": "CaptchaKit",
+    "image": "assets/projects/CaptchaKit/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/CaptchaKit/01.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "Self-hosted CAPTCHA for React and Next.js with server-side verification. No database, Redis, or external CAPTCHA provider required.",
+    "features": [
+      "Text, number, math, and image CAPTCHA types",
+      "English and Persian (RTL) support",
+      "Easy, medium, and hard difficulty",
+      "Light and dark themes",
+      "Custom styling with classNames and CSS variables",
+      "HMAC-signed tokens with expiration",
+      "One-time verification and replay protection",
+      "Attempt limits and rate limiting",
+      "Next.js App Router support"
+    ],
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "npm"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Self-hosted CAPTCHA for React and Next.js with server-side verification.",
+      "No database, Redis, or external CAPTCHA provider required.",
+      "Text, number, math, and image types with EN/FA RTL support."
+    ],
+    "demoLinks": [
+      { "label": "Live Demo", "url": "https://captchakit.netlify.app/" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/captchakit" }
+    ],
+    "liveUrl": "https://captchakit.netlify.app/",
+    "githubUrl": "https://github.com/MiladJoodi/CaptchaKit",
+    "category": "Package",
+    "date": "2026-03-02",
+    "pinned": false
+  },
+  {
     "id": "skeletonix",
     "title": "Skeletonix",
     "image": "assets/projects/Skeletonix/01.gif",
