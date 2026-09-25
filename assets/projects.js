@@ -139,7 +139,11 @@ window.PROJECT_DATA = [
       "TypeScript",
       "npm"
     ],
-    "relatedLinks": [],
+    "relatedLinks": [
+      { "label": "LinkedIn post", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7509328564400386048/" },
+      { "label": "DEV.to article", "url": "https://dev.to/joodi/captchakit-a-self-hosted-captcha-package-for-react-nextjs-try-it-live-23j9" },
+      { "label": "Medium article", "url": "https://medium.com/@joodi/captchakit-a-self-hosted-captcha-package-for-react-next-js-try-it-live-65caf684ac49" }
+    ],
     "blurb": [
       "Self-hosted CAPTCHA for React and Next.js with server-side verification.",
       "No database, Redis, or external CAPTCHA provider required.",
