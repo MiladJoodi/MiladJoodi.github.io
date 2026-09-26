@@ -56,7 +56,7 @@
 window.PROJECT_DATA = [
   {
     "id": "meetcast",
-    "title": "MeetCast",
+    "title": "Webinari",
     "image": "assets/projects/MeetCast/Desktop/01.png",
     "video": "assets/projects/MeetCast/Desktop/01.mp4",
     "screenshotsDesktop": [
@@ -106,7 +106,7 @@ window.PROJECT_DATA = [
       "Scheduled rooms, invite links, private allowlists, and plan-based limits.",
       "Host moderation, auth, billing, and an admin panel on Next.js 16."
     ],
-    "liveUrl": "https://meetcast-demo.netlify.app/",
+    "liveUrl": "http://webinari.ir/",
     "githubUrl": "https://github.com/MiladJoodi/MeetCast",
     "category": "Web App",
     "date": "2026-09-25",
