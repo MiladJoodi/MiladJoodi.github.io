@@ -40,6 +40,41 @@
     toggle.blur();
   });
 
+  /* ---------- GitHub stars ---------- */
+  (function loadGithubStars() {
+    var countEl = document.getElementById('githubStarCount');
+    if (!countEl) return;
+    var cacheKey = 'aj-gh-stars-MiladJoodi.github.io';
+    var cacheTtl = 60 * 60 * 1000;
+    function formatStars(n) {
+      if (n >= 1000) {
+        var k = n / 1000;
+        return (k >= 10 ? Math.round(k) : Math.round(k * 10) / 10) + 'k';
+      }
+      return String(n);
+    }
+    function setCount(n) {
+      if (typeof n !== 'number' || isNaN(n)) return;
+      countEl.textContent = formatStars(n);
+    }
+    try {
+      var cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      if (cached && typeof cached.count === 'number' && Date.now() - cached.at < cacheTtl) {
+        setCount(cached.count);
+      }
+    } catch (e) {}
+    fetch('https://api.github.com/repos/MiladJoodi/MiladJoodi.github.io')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        setCount(data.stargazers_count);
+        try {
+          localStorage.setItem(cacheKey, JSON.stringify({ count: data.stargazers_count, at: Date.now() }));
+        } catch (e2) {}
+      })
+      .catch(function () {});
+  })();
+
   /* ---------- hide on scroll down / show header on scroll up ---------- */
   var topbar = document.getElementById('topbar');
   var filterbar = document.getElementById('filterbar');
@@ -152,18 +187,23 @@
   }
 
   function onScroll() {
-    if (document.body.classList.contains('is-detail')) return;
+    var onDetail = document.body.classList.contains('is-detail');
     var y = window.scrollY || window.pageYOffset;
     var dy = y - lastScroll;
     var goingDown = dy > 4;
     var goingUp = dy < -4;
-    var pastHero = y > hideAfterY();
+    var pastHide = onDetail ? y > 48 : y > hideAfterY();
     // Layout shifts (filter/route) cause huge scroll jumps; snap chrome without slide animation
     var jump = Math.abs(dy) > 80;
 
+    function showTopOnly() {
+      topbar.classList.remove('is-hidden');
+    }
+
     if (jump) {
       withChromeInstant(function () {
-        showChromeBars();
+        if (onDetail) showTopOnly();
+        else showChromeBars();
       });
       lastScroll = y <= 0 ? 0 : y;
       ticking = false;
@@ -171,12 +211,14 @@
     }
 
     if (y < 32) {
-      showChromeBars();
-    } else if (goingDown && pastHero) {
+      if (onDetail) showTopOnly();
+      else showChromeBars();
+    } else if (goingDown && pastHide) {
       topbar.classList.add('is-hidden');
-      if (filterbar) filterbar.classList.add('is-hidden');
+      if (!onDetail && filterbar) filterbar.classList.add('is-hidden');
     } else if (goingUp) {
-      showChromeBars();
+      if (onDetail) showTopOnly();
+      else showChromeBars();
     }
 
     lastScroll = y <= 0 ? 0 : y;
