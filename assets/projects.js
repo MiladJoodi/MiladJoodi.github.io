@@ -98,7 +98,11 @@ window.PROJECT_DATA = [
       "Registry"
     ],
     "relatedLinks": [
-      { "label": "Original: shadcn/ui", "url": "https://ui.shadcn.com" }
+      { "label": "Original: shadcn/ui", "url": "https://ui.shadcn.com" },
+      { "label": "LinkedIn post", "url": "https://lnkd.in/p/eW6MVQ3x" },
+      { "label": "Dev.to article", "url": "https://dev.to/joodi/i-forked-shadcnui-to-build-a-better-rtl-experience-1bnm" },
+      { "label": "Medium article", "url": "https://medium.com/@joodi/i-forked-shadcn-ui-to-build-a-better-rtl-experience-14f5af477365" },
+      { "label": "X / Twitter post", "url": "https://x.com/joodi_ir/status/2107851542552596948" }
     ],
     "blurb": [
       "Persian-first UI component library and design system built for real Persian and RTL products.",
@@ -421,7 +425,7 @@ window.PROJECT_DATA = [
       "Built with Next.js, TypeScript, Tailwind CSS, and the GitHub API."
     ],
     "liveUrl": "https://git-gpt.netlify.app/",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/MiladJoodi/Git-GPT",
     "category": "Developer Tools",
     "date": "2026-09-13",
     "pinned": false
@@ -1420,7 +1424,7 @@ window.PROJECT_DATA = [
       "Persian data via ?lang=fa; OpenAPI 3.1; shared demo DB resets once per day."
     ],
     "liveUrl": "https://mockdata.ir",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/MiladJoodi/MockData.ir",
     "category": "Developer Tools",
     "date": "2026-09-24",
     "pinned": false
@@ -1460,7 +1464,7 @@ window.PROJECT_DATA = [
       "Secure server proxy with SSRF protection; data stays in the browser via IndexedDB."
     ],
     "liveUrl": "https://endpoints.ir",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/MiladJoodi/Endpoints.ir",
     "category": "Developer Tools",
     "date": "2026-09-15",
     "pinned": false

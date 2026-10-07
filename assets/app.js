@@ -41,39 +41,104 @@
   });
 
   /* ---------- GitHub stars ---------- */
-  (function loadGithubStars() {
-    var countEl = document.getElementById('githubStarCount');
-    if (!countEl) return;
-    var cacheKey = 'aj-gh-stars-MiladJoodi.github.io';
-    var cacheTtl = 60 * 60 * 1000;
-    function formatStars(n) {
-      if (n >= 1000) {
-        var k = n / 1000;
-        return (k >= 10 ? Math.round(k) : Math.round(k * 10) / 10) + 'k';
-      }
-      return String(n);
+  var GH_STAR_TTL = 60 * 60 * 1000;
+  var GH_STAR_SVG = '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+
+  function formatStars(n) {
+    if (n >= 1000) {
+      var k = n / 1000;
+      return (k >= 10 ? Math.round(k) : Math.round(k * 10) / 10) + 'k';
     }
-    function setCount(n) {
-      if (typeof n !== 'number' || isNaN(n)) return;
-      countEl.textContent = formatStars(n);
-    }
+    return String(n);
+  }
+
+  function parseGithubRepo(url) {
+    if (!url) return null;
+    var m = String(url).match(/^https?:\/\/github\.com\/([^\/?#]+)\/([^\/?#]+)/i);
+    if (!m) return null;
+    return m[1] + '/' + m[2].replace(/\.git$/i, '');
+  }
+
+  function getCachedStars(repo) {
     try {
-      var cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
-      if (cached && typeof cached.count === 'number' && Date.now() - cached.at < cacheTtl) {
-        setCount(cached.count);
+      var cached = JSON.parse(localStorage.getItem('aj-gh-stars-' + repo) || 'null');
+      if (cached && typeof cached.count === 'number' && Date.now() - cached.at < GH_STAR_TTL) {
+        return cached.count;
       }
     } catch (e) {}
-    fetch('https://api.github.com/repos/MiladJoodi/MiladJoodi.github.io')
+    return null;
+  }
+
+  function setCachedStars(repo, count) {
+    try {
+      localStorage.setItem('aj-gh-stars-' + repo, JSON.stringify({ count: count, at: Date.now() }));
+    } catch (e) {}
+  }
+
+  function fetchGithubStars(repo) {
+    return fetch('https://api.github.com/repos/' + repo)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (!data || typeof data.stargazers_count !== 'number') return;
-        setCount(data.stargazers_count);
-        try {
-          localStorage.setItem(cacheKey, JSON.stringify({ count: data.stargazers_count, at: Date.now() }));
-        } catch (e2) {}
+        if (!data || typeof data.stargazers_count !== 'number') return null;
+        setCachedStars(repo, data.stargazers_count);
+        return data.stargazers_count;
       })
-      .catch(function () {});
+      .catch(function () { return null; });
+  }
+
+  function resolveGithubStars(repo, onCount) {
+    if (!repo || typeof onCount !== 'function') return;
+    var cached = getCachedStars(repo);
+    if (cached !== null) {
+      onCount(cached);
+      return;
+    }
+    fetchGithubStars(repo).then(function (n) {
+      if (n !== null) onCount(n);
+    });
+  }
+
+  (function loadPortfolioStars() {
+    var countEl = document.getElementById('githubStarCount');
+    if (!countEl) return;
+    resolveGithubStars('MiladJoodi/MiladJoodi.github.io', function (n) {
+      if (typeof n !== 'number' || isNaN(n)) return;
+      countEl.textContent = formatStars(n);
+    });
   })();
+
+  function applyDetailStarBadge(badge, n) {
+    var countEl = badge.querySelector('.btn-github-count');
+    var link = badge.closest('a.btn-github');
+    var label = (link && link.getAttribute('data-gh-label')) || 'GitHub';
+    badge.removeAttribute('aria-busy');
+    if (typeof n !== 'number' || isNaN(n) || n < 1 || !countEl) {
+      badge.hidden = true;
+      badge.classList.remove('is-loading');
+      return;
+    }
+    countEl.textContent = formatStars(n);
+    badge.classList.remove('is-loading');
+    badge.hidden = false;
+    if (link) {
+      link.setAttribute('aria-label', label + ' — ' + formatStars(n) + ' stars');
+    }
+  }
+
+  function loadDetailGithubStars() {
+    detailView.querySelectorAll('[data-gh-stars]').forEach(function (badge) {
+      var repo = badge.getAttribute('data-gh-stars');
+      if (!repo) return;
+      var cached = getCachedStars(repo);
+      if (cached !== null) {
+        applyDetailStarBadge(badge, cached);
+        return;
+      }
+      fetchGithubStars(repo).then(function (n) {
+        applyDetailStarBadge(badge, n);
+      });
+    });
+  }
 
   /* ---------- hide on scroll down / show header on scroll up ---------- */
   var topbar = document.getElementById('topbar');
@@ -932,7 +997,39 @@
       : (p.githubUrl ? [{ label: 'GitHub', url: p.githubUrl }] : []);
     repos.forEach(function (l) {
       if (!l || !l.url) return;
-      actions += '<a class="btn-github" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label || 'GitHub') + '</a>';
+      var label = l.label || 'GitHub';
+      var repo = parseGithubRepo(l.url);
+      var cachedStars = repo ? getCachedStars(repo) : null;
+      var starsReady = cachedStars !== null && cachedStars >= 1;
+      var stars = '';
+      if (repo) {
+        var ariaLabel = starsReady
+          ? label + ' — ' + formatStars(cachedStars) + ' stars'
+          : label;
+        stars = '<span class="btn-github-stars' + (starsReady ? '' : ' is-loading') + '"' +
+          ' data-gh-stars="' + esc(repo) + '"' +
+          (starsReady ? '' : ' aria-busy="true"') + '>' +
+          '<span class="btn-github-spinner" aria-hidden="true"></span>' +
+          '<span class="btn-github-ready">' +
+            GH_STAR_SVG +
+            '<span class="btn-github-count">' +
+              (starsReady ? esc(formatStars(cachedStars)) : '') +
+            '</span>' +
+          '</span>' +
+        '</span>';
+        actions += '<a class="btn-github" href="' + esc(l.url) + '" target="_blank" rel="noopener"' +
+          ' data-gh-label="' + esc(label) + '"' +
+          ' aria-label="' + esc(ariaLabel) + '">' +
+          '<span class="btn-github-label">' + esc(label) + '</span>' +
+          stars +
+        '</a>';
+        return;
+      }
+      actions += '<a class="btn-github" href="' + esc(l.url) + '" target="_blank" rel="noopener"' +
+        ' data-gh-label="' + esc(label) + '"' +
+        ' aria-label="' + esc(label) + '">' +
+        '<span class="btn-github-label">' + esc(label) + '</span>' +
+      '</a>';
     });
 
     var deviceIcons = {
@@ -1204,6 +1301,7 @@
     detailView.setAttribute('data-project-id', projectId(p));
     detailView.innerHTML = detailHTML(p);
     wireDetail();
+    loadDetailGithubStars();
     withChromeInstant(function () {
       topbar.classList.remove('is-hidden');
     });
