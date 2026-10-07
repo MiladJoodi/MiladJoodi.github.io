@@ -76,7 +76,7 @@ window.PROJECT_DATA = [
       "assets/projects/FarsiUI/Mobile/02.png",
       "assets/projects/FarsiUI/Mobile/03.png"
     ],
-    "about": "A Persian-first UI component library and design system for React and Tailwind CSS, built specifically for Persian and RTL products. It goes beyond basic RTL support with Persian typography, digits, Jalali dates, forms, and interaction patterns designed for real Persian web applications.\n\nFarsiUI follows a copy-and-own approach: components are installed through a CLI, their source code is added directly to your project, and everything can be customized, extended, or replaced.",
+    "about": "A Persian-first UI component library and design system for React and Tailwind CSS, built specifically for Persian and RTL products. It is a fork of shadcn/ui, adapted for Persian and RTL-first products. It goes beyond basic RTL support with Persian typography, digits, Jalali dates, forms, and interaction patterns designed for real Persian web applications.\n\nFarsiUI follows a copy-and-own approach: components are installed through a CLI, their source code is added directly to your project, and everything can be customized, extended, or replaced.",
     "features": [
       "+500 components for building production-ready product interfaces",
       "6 design systems with switchable visual styles",
@@ -85,6 +85,7 @@ window.PROJECT_DATA = [
       "Jalali calendar and Shamsi date support",
       "CLI + registry architecture for installing components directly into your project",
       "Copy-and-own source code with no locked runtime or dependency on a hosted UI layer",
+      "Fork of shadcn/ui — same mental model, adapted for Persian and RTL",
       "Accessible components built on Base UI, Radix UI, and React Aria patterns"
     ],
     "stack": [
@@ -96,11 +97,13 @@ window.PROJECT_DATA = [
       "CLI",
       "Registry"
     ],
-    "relatedLinks": [],
+    "relatedLinks": [
+      { "label": "Original: shadcn/ui", "url": "https://ui.shadcn.com" }
+    ],
     "blurb": [
       "Persian-first UI component library and design system built for real Persian and RTL products.",
       "+500 components, RTL-first design, Jalali calendar, Persian-ready typography and digits, and 6 design systems.",
-      "CLI installation with copy-and-own source code you can fully customize."
+      "Fork of shadcn/ui with CLI installation and copy-and-own source you can fully customize."
     ],
     "demoLinks": [
       { "label": "Live", "url": "https://farsiui.ir" },
