@@ -55,6 +55,64 @@
  */
 window.PROJECT_DATA = [
   {
+    "id": "farsiui",
+    "title": "FarsiUI",
+    "image": "assets/projects/FarsiUI/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/FarsiUI/Desktop/01.png",
+      "assets/projects/FarsiUI/Desktop/02.png",
+      "assets/projects/FarsiUI/Desktop/03.png",
+      "assets/projects/FarsiUI/Desktop/04.png",
+      "assets/projects/FarsiUI/Desktop/05.png",
+      "assets/projects/FarsiUI/Desktop/06.png",
+      "assets/projects/FarsiUI/Desktop/07.png",
+      "assets/projects/FarsiUI/Desktop/08.png",
+      "assets/projects/FarsiUI/Desktop/09.png",
+      "assets/projects/FarsiUI/Desktop/10.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/FarsiUI/Mobile/01.png",
+      "assets/projects/FarsiUI/Mobile/02.png",
+      "assets/projects/FarsiUI/Mobile/03.png"
+    ],
+    "about": "A Persian-first UI component library and design system for React and Tailwind CSS, built specifically for Persian and RTL products. It goes beyond basic RTL support with Persian typography, digits, Jalali dates, forms, and interaction patterns designed for real Persian web applications.\n\nFarsiUI follows a copy-and-own approach: components are installed through a CLI, their source code is added directly to your project, and everything can be customized, extended, or replaced.",
+    "features": [
+      "+500 components for building production-ready product interfaces",
+      "6 design systems with switchable visual styles",
+      "RTL-first layouts, spacing, controls, and interactions",
+      "Persian-ready typography, digits, forms, and UI patterns",
+      "Jalali calendar and Shamsi date support",
+      "CLI + registry architecture for installing components directly into your project",
+      "Copy-and-own source code with no locked runtime or dependency on a hosted UI layer",
+      "Accessible components built on Base UI, Radix UI, and React Aria patterns"
+    ],
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "pnpm",
+      "CLI",
+      "Registry"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Persian-first UI component library and design system built for real Persian and RTL products.",
+      "+500 components, RTL-first design, Jalali calendar, Persian-ready typography and digits, and 6 design systems.",
+      "CLI installation with copy-and-own source code you can fully customize."
+    ],
+    "demoLinks": [
+      { "label": "Live", "url": "https://farsiui.ir" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/farsiui" }
+    ],
+    "liveUrl": "https://farsiui.ir",
+    "githubUrl": "https://github.com/MiladJoodi/FarsiUI",
+    "category": "Package",
+    "date": "2026-10-07",
+    "pinned": true
+  },
+  {
     "id": "meetcast",
     "title": "Webinari",
     "image": "assets/projects/MeetCast/Desktop/01.png",
@@ -110,7 +168,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/MeetCast",
     "category": "Web App",
     "date": "2026-09-25",
-    "pinned": true
+    "pinned": false
   },
   {
     "id": "captchakit",
@@ -150,7 +208,7 @@ window.PROJECT_DATA = [
       "Text, number, math, and image types with EN/FA RTL support."
     ],
     "demoLinks": [
-      { "label": "Live Demo", "url": "https://captchakit.netlify.app/" },
+      { "label": "Live", "url": "https://captchakit.netlify.app/" },
       { "label": "npm", "url": "https://www.npmjs.com/package/captchakit" }
     ],
     "liveUrl": "https://captchakit.netlify.app/",

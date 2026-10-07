@@ -765,6 +765,17 @@
     border-color: var(--ink-soft);
     background: var(--paper-inset);
   }
+  .btn-live {
+    gap: 7px;
+  }
+  .live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 2px color-mix(in srgb, #22c55e 22%, transparent);
+    flex-shrink: 0;
+  }
   .btn-github {
     background: var(--paper);
     color: var(--ink);
@@ -1079,6 +1090,9 @@
     max-width: 40em;
     font-size: var(--text-base);
     line-height: 1.65;
+  }
+  .detail-section p + p {
+    margin-top: 12px;
   }
   .detail-features {
     margin: 0;

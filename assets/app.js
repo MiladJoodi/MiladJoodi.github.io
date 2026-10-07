@@ -912,10 +912,20 @@
     var actions = '';
     var demos = (p.demoLinks && p.demoLinks.length)
       ? p.demoLinks
-      : (p.liveUrl ? [{ label: 'Live Demo', url: p.liveUrl }] : []);
+      : (p.liveUrl ? [{ label: 'Live', url: p.liveUrl }] : []);
     demos.forEach(function (l) {
       if (!l || !l.url) return;
-      actions += '<a class="btn-demo" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label || 'Live Demo') + '</a>';
+      var raw = String(l.label || '').trim();
+      if (/^npm$/i.test(raw)) {
+        actions += '<a class="btn-demo" href="' + esc(l.url) + '" target="_blank" rel="noopener">npm</a>';
+        return;
+      }
+      var suffix = '';
+      if (/\(\s*EN\s*\)/i.test(raw)) suffix = ' (EN)';
+      else if (/\(\s*FA\s*\)/i.test(raw)) suffix = ' (FA)';
+      actions += '<a class="btn-demo btn-live" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+        '<span class="live-dot" aria-hidden="true"></span>Live' + suffix +
+      '</a>';
     });
     var repos = (p.githubLinks && p.githubLinks.length)
       ? p.githubLinks
@@ -1002,7 +1012,11 @@
             '</section>'
           : '') +
         (p.about
-          ? '<section class="detail-section"><h2>About</h2><p>' + esc(p.about) + '</p></section>'
+          ? '<section class="detail-section"><h2>About</h2>' +
+              String(p.about).split(/\n+/).filter(Boolean).map(function (para) {
+                return '<p>' + esc(para) + '</p>';
+              }).join('') +
+            '</section>'
           : '') +
         (features
           ? '<section class="detail-section"><h2>Features</h2><ul class="detail-features">' + features + '</ul></section>'
