@@ -120,6 +120,111 @@ window.PROJECT_DATA = [
     "pinned": true
   },
   {
+    "id": "farsiui-icons",
+    "title": "FarsiUI Icons",
+    "image": "assets/projects/FarsiUI-Icons/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/FarsiUI-Icons/Desktop/01.png",
+      "assets/projects/FarsiUI-Icons/Desktop/02.png",
+      "assets/projects/FarsiUI-Icons/Desktop/03.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/FarsiUI-Icons/Mobile/02.png",
+      "assets/projects/FarsiUI-Icons/Mobile/01.png"
+    ],
+    "about": "A copy-and-own React icon collection focused on Iranian brands and services, with additional tech, crypto, and Lucide icons. Install only the icons you need through a CLI, with no icon library dependency or changes to your package.json.",
+    "features": [
+      "Iranian brand icons for banks, services, and local products",
+      "Tech and crypto icons in the same collection",
+      "CLI-based installation with source code copied directly into your project",
+      "Color and monochrome variants using currentColor",
+      "Optional Lucide icons through the same CLI",
+      "Custom output paths for flexible project structure",
+      "Community contributions through the website's icon submission flow",
+      "React 18 and 19 support"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "SVG",
+      "CLI",
+      "Vite",
+      "npm"
+    ],
+    "relatedLinks": [
+      { "label": "LinkedIn post", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7517268233914097664/" },
+      { "label": "X / Twitter post", "url": "https://x.com/joodi_ir/status/2111484457949815036" }
+    ],
+    "blurb": [
+      "Iranian brand React icons you copy into your project with a simple CLI.",
+      "No package.json dependency — install only the icons you need.",
+      "Includes tech, crypto, and Lucide icons alongside Iranian brands."
+    ],
+    "demoLinks": [
+      { "label": "Live", "url": "https://icons.FarsiUI.ir" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/farsiui-icons" }
+    ],
+    "liveUrl": "https://icons.FarsiUI.ir",
+    "githubUrl": "https://github.com/MiladJoodi/FarsiUI-Icons",
+    "category": "Package",
+    "date": "2026-10-17",
+    "pinned": false
+  },
+  {
+    "id": "tarhak",
+    "title": "Tarhak",
+    "image": "assets/projects/Tarhak/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/Tarhak/Desktop/01.png",
+      "assets/projects/Tarhak/Desktop/02.png",
+      "assets/projects/Tarhak/Desktop/03.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/Tarhak/Mobile/04.png"
+    ],
+    "about": "A motion-first component registry of animated React components and micro-interactions for Persian products. Browse, preview, and install into a FarsiUI project with a CLI. Each component is a focused interaction such as menus, cards, carousels, and forms, with animation that feels intentional, not decorative. You get the source, you own it, and you can change anything.\n\nTarhak sits next to FarsiUI: FarsiUI covers the design system and primitives; Tarhak adds the animated pieces you drop in on top.",
+    "features": [
+      "Motion-first components built with Motion and Tailwind CSS",
+      "Persian RTL layouts and copy designed for right-to-left interfaces",
+      "Live interactive previews on every component docs page",
+      "CLI install with source code copied into your repo",
+      "FarsiUI-ready registry and CLI model",
+      "One command with @tarhak/cli to wire the registry and add components",
+      "MCP server for Cursor, Claude, Codex, and OpenCode",
+      "Browse components and docs at tarhak.ir"
+    ],
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Motion",
+      "Tailwind CSS",
+      "FarsiUI",
+      "CLI",
+      "MCP"
+    ],
+    "relatedLinks": [
+      { "label": "LinkedIn post", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7515506882485047297" },
+      { "label": "X / Twitter post", "url": "https://x.com/joodi_ir/status/2109746695831789739" }
+    ],
+    "blurb": [
+      "Free premium animated React components and micro-interactions for Persian products.",
+      "Motion-first registry with Framer Motion, Tailwind CSS, and CLI copy-and-own install.",
+      "Built to sit on top of FarsiUI with live previews and MCP for agents."
+    ],
+    "demoLinks": [
+      { "label": "Live", "url": "https://tarhak.ir" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/@tarhak/cli" }
+    ],
+    "liveUrl": "https://tarhak.ir",
+    "githubUrl": "https://github.com/MiladJoodi/Tarhak",
+    "category": "Package",
+    "date": "2026-10-16",
+    "pinned": false
+  },
+  {
     "id": "meetcast",
     "title": "Webinari",
     "image": "assets/projects/MeetCast/Desktop/01.png",
