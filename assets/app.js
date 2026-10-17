@@ -23,15 +23,24 @@
   function applyTheme(t) {
     root.setAttribute('data-theme', t);
   }
+  function systemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
   // Theme already applied in <head>; keep toggle in sync
   try {
     var saved = localStorage.getItem('aj-theme');
     if (!root.getAttribute('data-theme')) {
-      applyTheme(saved === 'dark' ? 'dark' : 'light');
+      applyTheme(saved === 'dark' || saved === 'light' ? saved : systemTheme());
     }
   } catch (e) {
-    if (!root.getAttribute('data-theme')) applyTheme('light');
+    if (!root.getAttribute('data-theme')) applyTheme(systemTheme());
   }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    try {
+      if (localStorage.getItem('aj-theme')) return;
+    } catch (err) {}
+    applyTheme(e.matches ? 'dark' : 'light');
+  });
   toggle.addEventListener('click', function () {
     var current = root.getAttribute('data-theme') || 'light';
     var next = current === 'dark' ? 'light' : 'dark';
