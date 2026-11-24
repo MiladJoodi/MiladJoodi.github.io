@@ -55,6 +55,100 @@
  */
 window.PROJECT_DATA = [
   {
+    "id": "sonojs",
+    "title": "SonoJS",
+    "image": "assets/projects/SonoJS/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/SonoJS/Desktop/01.png",
+      "assets/projects/SonoJS/Desktop/02.png",
+      "assets/projects/SonoJS/Desktop/03.png",
+      "assets/projects/SonoJS/Desktop/04.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/SonoJS/Mobile/01.png"
+    ],
+    "about": "SonoJS is a React and Tailwind CSS UI ecosystem that helps developers build modern web applications faster. I designed the architecture, built the product, and manage its development from concept to launch.",
+    "features": [
+      "+1500 reusable components and production-ready UI blocks",
+      "@sonojs/ui CLI for adding editable component source code directly to projects",
+      "Complete product stack with design systems, registry infrastructure, authentication, and Stripe billing",
+      "Advanced UI experiences including interactive charts, 3D components, AI interfaces, and animated backgrounds",
+      "Developer experience with documentation, live previews, and a public component registry"
+    ],
+    "stack": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Stripe",
+      "CLI",
+      "Registry"
+    ],
+    "relatedLinks": [
+      { "label": "SonoJS on X", "url": "https://x.com/_sonojs" },
+      { "label": "SonoJS on LinkedIn", "url": "https://www.linkedin.com/company/sonojs" }
+    ],
+    "blurb": [
+      "React and Tailwind CSS UI ecosystem for building modern web applications faster.",
+      "+1500 reusable components, production-ready blocks, and an editable-source CLI.",
+      "Built from concept to launch with design systems, registry infrastructure, authentication, and Stripe billing."
+    ],
+    "demoLinks": [
+      { "label": "Live", "url": "https://sonojs.com" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/@sonojs/ui" }
+    ],
+    "liveUrl": "https://sonojs.com",
+    "githubUrl": "https://github.com/MiladJoodi/SonoJS",
+    "category": "Package",
+    "date": "2026-10-20",
+    "pinned": true
+  },
+  {
+    "id": "sonojs-api",
+    "title": "SonoJS API",
+    "image": "assets/projects/SonoJS-api/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/SonoJS-api/Desktop/01.png",
+      "assets/projects/SonoJS-api/Desktop/02.png",
+      "assets/projects/SonoJS-api/Desktop/03.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [
+      "assets/projects/SonoJS-api/Mobile/01.png"
+    ],
+    "about": "SonoJS API is the API platform behind the SonoJS ecosystem, providing a focused developer experience for building and integrating modern applications.",
+    "features": [
+      "Developer-focused API platform for the SonoJS ecosystem",
+      "Clear API workflows and an easy-to-use interface",
+      "Built to support modern web application development"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "API"
+    ],
+    "relatedLinks": [
+      { "label": "X post", "url": "https://x.com/_sonojs/status/2125039940979613957" },
+      { "label": "LinkedIn post", "url": "https://lnkd.in/p/eBekNdTG" }
+    ],
+    "blurb": [
+      "The API platform behind the SonoJS ecosystem.",
+      "A focused developer experience for building and integrating modern applications.",
+      "Designed to support the SonoJS component and product ecosystem."
+    ],
+    "demoLinks": [
+      { "label": "Live", "url": "https://api.sonojs.com/" }
+    ],
+    "liveUrl": "https://api.sonojs.com/",
+    "githubUrl": "https://github.com/MiladJoodi/SonoJS",
+    "category": "Developer Tools",
+    "date": "2026-10-19",
+    "pinned": false
+  },
+  {
     "id": "farsiui",
     "title": "FarsiUI",
     "image": "assets/projects/FarsiUI/Desktop/01.png",
@@ -116,8 +210,8 @@ window.PROJECT_DATA = [
     "liveUrl": "https://farsiui.ir",
     "githubUrl": "https://github.com/MiladJoodi/FarsiUI",
     "category": "Package",
-    "date": "2026-10-07",
-    "pinned": true
+    "date": "2026-10-17",
+    "pinned": false
   },
   {
     "id": "farsiui-icons",
@@ -168,7 +262,7 @@ window.PROJECT_DATA = [
     "liveUrl": "https://icons.FarsiUI.ir",
     "githubUrl": "https://github.com/MiladJoodi/FarsiUI-Icons",
     "category": "Package",
-    "date": "2026-10-17",
+    "date": "2026-10-16",
     "pinned": false
   },
   {
@@ -279,7 +373,7 @@ window.PROJECT_DATA = [
     "liveUrl": "http://webinari.ir/",
     "githubUrl": "https://github.com/MiladJoodi/MeetCast",
     "category": "Web App",
-    "date": "2026-09-25",
+    "date": "2026-10-18",
     "pinned": false
   },
   {
@@ -1189,7 +1283,7 @@ window.PROJECT_DATA = [
     "liveUrl": "https://snapp-ui.netlify.app",
     "githubUrl": "https://github.com/MiladJoodi/Snapp",
     "category": "Web App",
-    "date": "2025-12-18",
+    "date": "2025-12-04",
     "pinned": false
   },
   {
@@ -1246,7 +1340,7 @@ window.PROJECT_DATA = [
     "liveUrl": "https://civora-dashboard.netlify.app",
     "githubUrl": "https://github.com/MiladJoodi/Civora-Dashboard",
     "category": "Web App",
-    "date": "2026-01",
+    "date": "2026-09-12",
     "pinned": false
   },
   {
