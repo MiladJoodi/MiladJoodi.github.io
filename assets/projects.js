@@ -193,6 +193,7 @@ window.PROJECT_DATA = [
     "id": "sonojs-geo",
     "title": "SonoJS Geo",
     "image": "assets/projects/SonoJS-geo/Desktop/01.png",
+    "video": "assets/projects/SonoJS-geo/Desktop/02.mp4",
     "screenshotsDesktop": [
       "assets/projects/SonoJS-geo/Desktop/01.png"
     ],
@@ -676,7 +677,8 @@ window.PROJECT_DATA = [
     "video": "assets/projects/GitGPT/01.mp4",
     "screenshotsDesktop": [
       "assets/projects/GitGPT/01.png",
-      "assets/projects/GitGPT/02.mp4"
+      "assets/projects/GitGPT/02.mp4",
+      "assets/projects/GitGPT/03.mp4"
     ],
     "screenshotsTablet": [],
     "screenshotsMobile": [],
