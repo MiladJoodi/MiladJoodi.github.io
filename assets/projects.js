@@ -101,7 +101,7 @@ window.PROJECT_DATA = [
     ],
     "liveUrl": "https://sonojs.com",
     "githubUrl": "https://github.com/MiladJoodi/SonoJS",
-    "category": "Package",
+    "category": "Developer Tools",
     "date": "2026-10-20",
     "pinned": true
   },
@@ -146,6 +146,89 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/SonoJS",
     "category": "Developer Tools",
     "date": "2026-10-19",
+    "pinned": true
+  },
+  {
+    "id": "sonojs-flags",
+    "title": "SonoJS Flags",
+    "image": "assets/projects/SonoJS-flags/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/SonoJS-flags/Desktop/01.png",
+      "assets/projects/SonoJS-flags/Desktop/02.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "@sonojs/flags is a lightweight JavaScript package providing country flag assets for modern web applications. It offers a consistent way to access and display flags through reusable SVG assets, making it easy to integrate country flags into selectors, forms, and location-aware interfaces.",
+    "features": [
+      "Scalable SVG flag assets for countries worldwide",
+      "Consistent flag rendering across modern web applications",
+      "Simple API for accessing and displaying country flags",
+      "CDN support for direct browser integration",
+      "Reusable assets for country selectors, phone inputs, and localization interfaces"
+    ],
+    "stack": [
+      "JavaScript",
+      "TypeScript",
+      "SVG",
+      "npm",
+      "CDN"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "A lightweight flag package for modern JavaScript applications.",
+      "Reusable country flag assets for selectors, localization, and geographic UIs.",
+      "Built for simple npm and browser-based integration."
+    ],
+    "demoLinks": [
+      { "label": "Live Demo", "url": "https://sonojs.github.io/SonoJS-flags/" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/@sonojs/flags" }
+    ],
+    "liveUrl": "https://sonojs.github.io/SonoJS-flags/",
+    "githubUrl": "https://github.com/MiladJoodi/SonoJS-flags",
+    "category": "Package",
+    "date": "2026-11-25",
+    "pinned": false
+  },
+  {
+    "id": "sonojs-geo",
+    "title": "SonoJS Geo",
+    "image": "assets/projects/SonoJS-geo/Desktop/01.png",
+    "screenshotsDesktop": [
+      "assets/projects/SonoJS-geo/Desktop/01.png"
+    ],
+    "screenshotsTablet": [],
+    "screenshotsMobile": [],
+    "about": "@sonojs/geo is a lightweight JavaScript package for accessing geographic data, including countries, states, and cities. It provides an asynchronous API with on-demand data loading, allowing applications to retrieve only the data they need instead of downloading the entire dataset. Built with TypeScript support, it works in both browser and Node.js environments.",
+    "features": [
+      "Country, state, and city lookups using ISO codes and numeric identifiers",
+      "On-demand data loading through separate data shards",
+      "Asynchronous APIs for geographic lookups and search",
+      "TypeScript definitions and browser/Node.js support",
+      "Configurable data hosting for custom deployments",
+      "In-memory caching and request deduplication to reduce unnecessary network requests"
+    ],
+    "stack": [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "npm",
+      "JSON",
+      "CDN"
+    ],
+    "relatedLinks": [],
+    "blurb": [
+      "Countries, states, and cities for JavaScript.",
+      "Lazy-loaded geographic data with an async API and TypeScript types.",
+      "Built for browser and Node.js applications with configurable data hosting."
+    ],
+    "demoLinks": [
+      { "label": "Live Demo", "url": "https://sonojs.github.io/SonoJS-geo/" },
+      { "label": "npm", "url": "https://www.npmjs.com/package/@sonojs/geo" }
+    ],
+    "liveUrl": "https://sonojs.github.io/SonoJS-geo/",
+    "githubUrl": "https://github.com/SonoJS/SonoJS-geo",
+    "category": "Package",
+    "date": "2026-11-25",
     "pinned": false
   },
   {
@@ -211,7 +294,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/FarsiUI",
     "category": "Package",
     "date": "2026-10-17",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "farsiui-icons",
@@ -263,7 +346,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/FarsiUI-Icons",
     "category": "Package",
     "date": "2026-10-16",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "tarhak",
@@ -316,7 +399,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/Tarhak",
     "category": "Package",
     "date": "2026-10-16",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "meetcast",
@@ -374,7 +457,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/MeetCast",
     "category": "Web App",
     "date": "2026-10-18",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "captchakit",
@@ -627,7 +710,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/Git-GPT",
     "category": "Developer Tools",
     "date": "2026-09-13",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "vamary",
@@ -1341,7 +1424,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/Civora-Dashboard",
     "category": "Web App",
     "date": "2026-09-12",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "tariboon",
@@ -1626,7 +1709,7 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/MockData.ir",
     "category": "Developer Tools",
     "date": "2026-09-24",
-    "pinned": false
+    "pinned": true
   },
   {
     "id": "endpoints",
@@ -1666,6 +1749,6 @@ window.PROJECT_DATA = [
     "githubUrl": "https://github.com/MiladJoodi/Endpoints.ir",
     "category": "Developer Tools",
     "date": "2026-09-15",
-    "pinned": false
+    "pinned": true
   }
 ];
